@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 		loop_rate.sleep();
 	}	
-        cout << "catch!:)";
+        cout << "catch!:D";
 	ros::spin();
 	return 0;
 }
