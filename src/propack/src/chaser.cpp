@@ -30,9 +30,9 @@ int main(int argc, char **argv)
 	ros::NodeHandle R;
 	ros::NodeHandle C;
 	ros::NodeHandle M;
-	ros::Subscriber chaser_sub = C.subscribe("/turtle2/pose", 10, changePC);
-        ros::Subscriber runner_sub = R.subscribe("/turtle1/pose", 10, changePR);
-	ros::Publisher master_pub = M.advertise<geometry_msgs::Twist>("/turtle2/cmd_vel", 10);
+	ros::Subscriber chaser_sub = C.subscribe("/turtle2/pose", 100, changePC);
+        ros::Subscriber runner_sub = R.subscribe("/turtle1/pose", 100, changePR);
+	ros::Publisher master_pub = M.advertise<geometry_msgs::Twist>("/turtle2/cmd_vel", 100);
 	ros::Rate loop_rate(1);
 	geometry_msgs::Twist msgM;
 	while (ros::ok())
