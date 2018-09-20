@@ -1,0 +1,2 @@
+propack
+-DCATKIN_DEVEL_PREFIX=/home/reihanehmohseni/crprojectl/devel -DCMAKE_INSTALL_PREFIX=/home/reihanehmohseni/crprojectl/install -G Unix Makefiles
