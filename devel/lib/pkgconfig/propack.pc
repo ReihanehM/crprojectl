@@ -1,0 +1,8 @@
+prefix=/home/reihanehmohseni/crprojectl/devel
+
+Name: propack
+Description: Description of propack
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/reihanehmohseni/crprojectl/devel/lib 
+Requires: 
