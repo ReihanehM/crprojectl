@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	{
 		cout << "chasing!" << endl; 
 		float euclidist = sqrt(pow(runner.x - chaser.x , 2)+pow(runner.y - chaser.y , 2));
-		float Sangle = atan2(( chaser.y- runner.y) , (chaser.x -runner.x ));
+		float Sangle = atan2((runner.y -chaser.y ) , ( runner.x- chaser.x));
 		if(euclidist>=0.9)
 		{
 			msgM.linear.x = 0.3 * euclidist;
@@ -47,8 +47,7 @@ int main(int argc, char **argv)
 			msgM.linear.z = 0;
 			msgM.angular.x = 0;
 			msgM.angular.y = 0;
-			msgM.angular.z = 0.3 * (Sangle - chaser.theta); 
-                        master_pub.publish(msgM);
+			msgM.angular.z = 0.3 * (Sangle - chaser.theta);         
 		}
 		else
 		{
@@ -58,8 +57,8 @@ int main(int argc, char **argv)
                         msgM.angular.x = 0;
                         msgM.angular.y = 0;
                         msgM.angular.z = 0;
-		master_pub.publish(msgM);
                 }
+                master_pub.publish(msgM);
 		ros::spinOnce();
 		loop_rate.sleep();
 	}	
